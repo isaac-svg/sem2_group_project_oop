@@ -11,7 +11,7 @@ class CUSTOMER
       
     void buy();
 
-    void addToCart(PRODUCT item);
+    void selectItem(PRODUCT item);
 
     void removeFromCart(int _position);
 
@@ -21,20 +21,12 @@ class CUSTOMER
 
     void logout();
 
-    void clearCart();
-
-    void giveDiscount(float percent);
-
-    void showCart();
 
     private:
     string id;
     string first_name;
     string last_name;
-    string password;
-    // vector<PRODUCT> cart;
-    double totalAmout;
-    int totalProducts;   
+    string password;  
 };
 
 #endif

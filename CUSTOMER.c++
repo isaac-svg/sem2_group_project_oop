@@ -1,22 +1,26 @@
 #include "customer.h"
 #include "AUTH.c++"
+#include "CART.c++"
 #include "PRODUCT.c++"
 #include <fstream>
+// using namespace PRODUCT;
 using namespace std;
 
 typedef fstream file;
 
-CUSTOMER::CUSTOMER( string first_name,  string last_name, string password){
+CUSTOMER::CUSTOMER( string first_name,  string last_name, string password)
+{
         this->first_name = first_name;
         this->last_name =  last_name;
         this->password = password;
-        // write to file
-        
-    }
+}
 
     void CUSTOMER::buy(){}
 
-    void CUSTOMER::addToCart(PRODUCT item){}
+    void CUSTOMER::selectItem(PRODUCT item){
+        CART * cart = CART::getinStance();
+        cart->addToCart(item);
+    }
 
     void CUSTOMER::removeFromCart(int _position){}
 
@@ -52,9 +56,3 @@ CUSTOMER::CUSTOMER( string first_name,  string last_name, string password){
         AUTH authToken(this->first_name, this->last_name, this->password);
         authToken.Logout("auth.txt",details);
     }
-
-    void CUSTOMER::clearCart(){}
-
-    void CUSTOMER::giveDiscount(float percent){}
-
-    void CUSTOMER::showCart(){}

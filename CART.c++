@@ -52,3 +52,11 @@ void CART::addToCart(PRODUCT item)
     this->totalItems +=1;
     this->totalPrice += item.getPrice();
 }
+
+void CART::clearCart()
+{
+    CART *cart = CART::getinStance();
+   cart->items.clear();
+   cart->totalItems = 0;
+   cart->totalPrice = 0;
+}
