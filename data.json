@@ -1,0 +1,32 @@
+{
+    "item1":{
+        "name":"iphone 12",
+    "description":"get the latest iphone",
+    "price":12.00,
+    "quantity":120
+    },
+    "item2":{
+        "name":"iphone 12",
+    "description":"get the latest iphone",
+    "price":12.00,
+    "quantity":120
+    },
+    "item3":{
+        "name":"iphone 12",
+    "description":"get the latest iphone",
+    "price":12.00,
+    "quantity":120
+    },
+    "item4":{
+        "name":"iphone 12",
+    "description":"get the latest iphone",
+    "price":12.00,
+    "quantity":120
+    },
+    "item5":{
+        "name":"iphone 12",
+        "description":"get the latest iphone",
+    "price":12.00,
+    "quantity":120
+    }
+}

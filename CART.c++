@@ -1,32 +1,4 @@
-#include <vector>
-#include "PRODUCT.c++"
-#include <stddef.h>
-using namespace std;
-
-// making CART a singleton class since we only want to instantiate cart one
-class CART
-{
-private:
-    int totalItems;
-    // use the momey beuatifier
-    double totalPrice;
-    static CART* instance;
-    vector<PRODUCT>items;
-     CART::CART()
-    {
-    }
-    
-public:
-
-
-    // delete the default copy constructor
-    CART(const CART &obj) =  delete;
-
-    static CART* getinStance();
-    void addToCart(PRODUCT item);
-    void clearCart();
-
-};
+#include "CART.hpp"
 
 CART* CART::instance =  NULL;
 

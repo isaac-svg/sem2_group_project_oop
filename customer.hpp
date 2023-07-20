@@ -1,13 +1,16 @@
+#include <string>
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
+
 #include <vector>
-#include <string>
 #include <iostream>
+#include "PRODUCT.hpp"
+#include <string>
 using namespace std;
 class CUSTOMER 
 {
     public:
-    CUSTOMER(string first_name, string last_name,string password);
+    CUSTOMER(string first_name, string last_name, string password);
       
     void buy();
 

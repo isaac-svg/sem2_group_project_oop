@@ -1,14 +1,16 @@
-#include "customer.h"
-#include "AUTH.c++"
-#include "CART.c++"
-#include "PRODUCT.c++"
+#include "customer.hpp"
+#include "AUTH.hpp"
+#include "CART.hpp"
+#include "PRODUCT.hpp"
 #include <fstream>
+#include <string>
+#include <string.h>
 // using namespace PRODUCT;
 using namespace std;
 
 typedef fstream file;
 
-CUSTOMER::CUSTOMER( string first_name,  string last_name, string password)
+CUSTOMER::CUSTOMER(string first_name,  string last_name, string password)
 {
         this->first_name = first_name;
         this->last_name =  last_name;

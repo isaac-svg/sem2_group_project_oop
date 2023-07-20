@@ -1,5 +1,7 @@
 #include <string>
 using namespace std;
+#ifndef WORKER_H
+#define WORKER_H
 class WORKER 
 {
     public:
@@ -15,3 +17,5 @@ class WORKER
     static int _number_of_workers;  
 
 };
+
+#endif
