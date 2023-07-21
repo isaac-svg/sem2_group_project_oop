@@ -17,6 +17,7 @@ public:
     static UI* getUIInstace();
     static void loadProducts();
     void loadAuthPage();
+    void showCart();
 
 
 };

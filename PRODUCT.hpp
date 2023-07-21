@@ -27,10 +27,7 @@ static inline vector<PRODUCT> products;
  inline const string getdesc(){return desc;}
  inline const int getquantity(){return quantity;}
  inline const float getprice(){return price;}
-
-
-
-
+ 
 };
 
 

@@ -1,6 +1,7 @@
 #include "UI.hpp"
 #include "PRODUCT.hpp"
 #include "CART.hpp"
+#include "AUTH.hpp"
 UI* UI::instance = NULL;
 
 UI* UI::getUIInstace()
@@ -29,7 +30,7 @@ Json::Value completeJsonData;
 // reader reads the data and stores it in completeJsonData
 reader.parse(file, completeJsonData);
 
-cout << "Name: " << completeJsonData["item5"]["name"].asString()<< endl;
+// cout << "Name: " << completeJsonData["item5"]["name"].asString()<< endl;
 
     if (completeJsonData.isObject()) {
         // For objects, recursively print the key-value pairs
@@ -58,23 +59,35 @@ cout << "Name: " << completeJsonData["item5"]["name"].asString()<< endl;
       cout << "---------------------------\n";
 
         }
-        cout << "choose product to add to cart \n ";
+
+        // 
+        string ans = "";
+        do
+        {
+            cout << "choose product to add to cart \n ";
         cout << "choose by number "<< endl;
-        string ans ;
+       
         cin >> ans;
-        cout << "HELLO" << "\n";
+        if (ans == "buy")
+            {
+            cout << "I am great\n ";
+                break;
+            }
         size_t ansNum =  stoi(ans);
         cout << ans << "\n";
 
         PRODUCT itemChosen = PRODUCT::products.at(ansNum);
-        for (auto &pr : PRODUCT::products)
-        {
-            cout << pr.getdesc() << "\n";
-        }
+        // for (auto &pr : PRODUCT::products)
+        // {
+        //     cout << pr.getdesc() << "\n";
+        // }
 
-        CART *newCart = CART::getinStance();
-        newCart->addToCart(itemChosen);
-
+        CART *cart = CART::getinStance();
+        cart->addToCart(itemChosen);
+        } while (ans != "buy");
+        CART *cart = CART::getinStance();
+        cart->showCart();
+            
     } 
 
 }
@@ -85,8 +98,8 @@ void UI::loadAuthPage()
         cout << "press 1  register\n";
         cout << "already have an account press 2 to login\n";
 
-    UI * uiState = UI::getUIInstace();
-    uiState->loadProducts();
+    // UI * uiState = UI::getUIInstace();
+    // uiState->loadProducts();
     string choice;
     cin >> choice;
 
@@ -102,12 +115,16 @@ void UI::loadAuthPage()
         cin >> password;
         cout<< "\n";
 
-    
+                UI *ui =  UI::getUIInstace();
+                ui->loadProducts();
         
     }
     else if (choice == "2")
     {
-        string firstname,lastname,password;
+        bool isLoggedIn = false;
+        do
+        {
+            string firstname,lastname,password;
         cout << "Enter your first name";
         cin >> firstname;
         cout<< "\n";
@@ -117,7 +134,47 @@ void UI::loadAuthPage()
         cin >> password;
         cout<< "\n";
 
-    // display products
+        AUTH authToken(firstname, lastname, password);
+    
+
+        
+           isLoggedIn =  authToken.Login();
+            if (isLoggedIn)
+            {
+                
+                break;
+            }
+            
+            cout << "Credentials incorrect \n";
+            cout << "You have < "<<(authToken.trial_limit - authToken.number_of_trials) << "trials left\n";
+
+        } while ((AUTH::trial_limit > AUTH::number_of_trials) && !isLoggedIn);
+        
+        if (isLoggedIn)
+        {
+            UI *ui =  UI::getUIInstace();
+            ui->loadProducts();
+        }
+        if (!isLoggedIn)
+        {
+            
+        string firstname,lastname,password;
+        cout << "Please register with us\n";
+
+        cout << "Enter your first name";
+        cin >> firstname;
+        cout<< "\n";
+        cout << "Enter your last name";
+        cin >> lastname;
+        cout<< "\n";cout << "Enter your password";
+        cin >> password;
+        cout<< "\n";
+
+        UI *ui =  UI::getUIInstace();
+        ui->loadProducts();
+
+        }
+        // display products
 
     }
 }

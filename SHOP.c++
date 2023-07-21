@@ -36,6 +36,6 @@ int main(int argc, char *argv[])
 
     }
 
-    CART *cart = CART::getinStance();
-    cart->showCart();
+    // CART *cart = CART::getinStance();
+    // cart->showCart();
 }
