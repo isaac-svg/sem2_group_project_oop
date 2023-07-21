@@ -3,6 +3,7 @@
 #include <vector>
 #include "PRODUCT.hpp"
 #include <stddef.h>
+#include <iostream>
 using namespace std;
 
 // making CART a singleton class since we only want to instantiate cart one
@@ -20,13 +21,13 @@ private:
     
 public:
 
-
     // delete the default copy constructor
     CART(const CART &obj) =  delete;
 
     static CART* getinStance();
     void addToCart(PRODUCT item);
     void clearCart();
+    void showCart();
 
 };
 

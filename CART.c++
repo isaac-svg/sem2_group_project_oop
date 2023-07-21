@@ -32,3 +32,18 @@ void CART::clearCart()
    cart->totalItems = 0;
    cart->totalPrice = 0;
 }
+
+void CART::showCart(){
+    CART *readyCart =  CART::getinStance();
+   vector<PRODUCT>cartItems  = readyCart->items;
+
+   for (auto &&itm : cartItems)
+   {
+    cout<< itm.getprice() << "\n";
+    cout<< itm.getdesc() << "\n";
+    cout<< itm.getname() << "\n";
+    cout<< itm.getquantity() << "\n";
+
+   }
+   
+}

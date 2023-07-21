@@ -1,32 +1,36 @@
 {
-    "item1":{
-        "name":"iphone 12",
-    "description":"get the latest iphone",
-    "price":12.00,
+    "item1": {
+        "name":"mackbook",
+    "description":"the most powerfull computer",
+    "price":888.00,
     "quantity":120
     },
-    "item2":{
+
+    "item2": {
         "name":"iphone 12",
-    "description":"get the latest iphone",
-    "price":12.00,
-    "quantity":120
+    "description":"flex with sleak",
+    "price":120.00,
+    "quantity":500
     },
-    "item3":{
-        "name":"iphone 12",
-    "description":"get the latest iphone",
-    "price":12.00,
-    "quantity":120
+
+    "item3": {
+        "name":"Ipad",
+    "description":"touch with feeling",
+    "price":299.99,
+    "quantity":100
     },
-    "item4":{
-        "name":"iphone 12",
-    "description":"get the latest iphone",
-    "price":12.00,
-    "quantity":120
+
+    "item4": {
+        "name":"Huawei X32",
+    "description":"get the phone",
+    "price":80.00,
+    "quantity":99
     },
-    "item5":{
-        "name":"iphone 12",
-        "description":"get the latest iphone",
-    "price":12.00,
-    "quantity":120
+
+    "item5": {
+        "name":"Toshiba 123",
+        "description":"get the tosh",
+    "price":99,
+    "quantity":12
     }
 }
