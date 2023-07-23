@@ -64,6 +64,7 @@ Overall, the "Amazona" application is a simple yet effective shopping system tha
 6. Managers can also choose to restock the products in the shop.
 
 ## Manger Login
+./amazona_manager <firstname> <lastname> <password>
 Replace `<firstname>`, `<lastname>`, and `<password>` with the manager's actual first name, last name, and password, respectively.
 
 If the provided credentials match those of an existing manager, the manager will gain access to the dashboard and can perform actions like restocking the shop. If the login fails, the manager will receive appropriate feedback and can try again.
