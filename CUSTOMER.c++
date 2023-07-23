@@ -6,6 +6,7 @@
 #include <string>
 #include <string.h>
 // using namespace PRODUCT;
+// using namespace Color;
 using namespace std;
 
 typedef fstream file;

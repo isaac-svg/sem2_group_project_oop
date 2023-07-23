@@ -1,4 +1,9 @@
 #include "CART.hpp"
+#include <iomanip>
+#include "COLOR.h++"
+#include "PRODUCT.hpp"
+#include <set>
+#include "UI.hpp"
 
 CART* CART::instance =  NULL;
 
@@ -16,7 +21,9 @@ CART* CART::getinStance()
         }
     }
 }
-
+/**
+ * @item: 
+*/
 void CART::addToCart(PRODUCT item)
 {
     CART *cart = CART::getinStance();
@@ -34,16 +41,10 @@ void CART::clearCart()
 }
 
 void CART::showCart(){
-    CART *readyCart =  CART::getinStance();
-   vector<PRODUCT>cartItems  = readyCart->items;
 
-   for (auto &&itm : cartItems)
-   {
-    cout<< itm.getprice() << "\n";
-    cout<< itm.getdesc() << "\n";
-    cout<< itm.getname() << "\n";
-    cout<< itm.getquantity() << "\n";
+UI *ui = UI::getUIInstace();
+ui->showCart();
 
-   }
-   
+
 }
+
