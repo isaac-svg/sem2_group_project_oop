@@ -350,7 +350,7 @@ void UI::showCart()
    else
    {
     cout << "We are redirection you to the main page\n";
-    this->delayPrint("press X to leave the shop\n");
+    this->delayPrint("press X to leave the shop or any other key to continue shopping\n");
     cout << Color::FG_GREEN<< ">> " << Color::FG_DEFAULT;
     cin >> choice;
     cout << "\n";

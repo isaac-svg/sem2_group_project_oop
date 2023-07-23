@@ -1,2 +1,2 @@
 #!/bin/bash
-g++ -o app *.c++  -ljsoncpp
+g++ -o app *.c++
