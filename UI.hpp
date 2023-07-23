@@ -47,7 +47,7 @@ public:
 
 /**
  * @brief Function to load products from a data source.
- * Loads the data into  pro
+ * Loads the data into  @see PRODUCT::products
  * 
  */
     static void loadProducts();

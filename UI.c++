@@ -246,10 +246,10 @@ void UI::loadAuthPage()
         cout<< "\n";
 
         UI *ui =  UI::getUIInstace();
+        // display products
         ui->loadProducts();
 
         }
-        // display products
 
     }
 }

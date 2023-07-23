@@ -44,7 +44,7 @@ void MANAGER::restock()
 
     cout << "Enter product description use - to represent spaces: ";
    cin >> description;
-        // cin.ignore();
+       
     cout << "Enter product quantity: ";
     cin >> quantity;
 
@@ -56,8 +56,5 @@ void MANAGER::restock()
         cout << "Product information saved to file." << endl;
     
         }
-    outputFile.close();
-
-            
-        
+    outputFile.close(); 
 }

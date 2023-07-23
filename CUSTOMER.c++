@@ -5,57 +5,65 @@
 #include <fstream>
 #include <string>
 #include <string.h>
-// using namespace PRODUCT;
-// using namespace Color;
+
 using namespace std;
 
-typedef fstream file;
-
-CUSTOMER::CUSTOMER(string first_name,  string last_name, string password)
+// Constructor to initialize customer information
+CUSTOMER::CUSTOMER(string first_name, string last_name, string password)
 {
-        this->first_name = first_name;
-        this->last_name =  last_name;
-        this->password = password;
+    this->first_name = first_name;
+    this->last_name = last_name;
+    this->password = password;
 }
 
-    void CUSTOMER::buy(){}
+// Function to perform the purchase
+void CUSTOMER::buy()
+{
+    // Implementation of purchase functionality can be added here
+    // Currently, it is left empty as it will depend on specific requirements
+}
 
-    void CUSTOMER::selectItem(PRODUCT item){
-        CART * cart = CART::getinStance();
-        cart->addToCart(item);
+// Function to select an item and add it to the cart
+void CUSTOMER::selectItem(PRODUCT item)
+{
+    CART *cart = CART::getinStance();
+    cart->addToCart(item);
+}
+
+// Function to remove an item from the cart (not implemented in current code)
+void CUSTOMER::removeFromCart(int _position)
+{
+    // Implementation of removing items from the cart can be added here
+    // Currently, it is left empty as it will depend on specific requirements
+}
+
+// Function to create a customer account and register in the authentication system
+void CUSTOMER::createAccount()
+{
+    AUTH newCustomer(this->first_name, this->last_name, this->password);
+    newCustomer.Register();
+}
+
+// Function to handle customer login using authentication credentials
+bool CUSTOMER::login(string first_name, string last_name, string password)
+{
+    // Create an authentication token using provided credentials
+    AUTH authToken(first_name, last_name, password);
+    bool isloggedin = authToken.Login();
+
+    if (!isloggedin)
+    {
+        cout << "Incorrect credentials. You have " << authToken.trial_limit - authToken.number_of_trials << " attempts left.\n";
+        return false;
     }
 
-    void CUSTOMER::removeFromCart(int _position){}
+    return true;
+}
 
-    void CUSTOMER::createAccount(){
-        AUTH newCustomer(this->first_name,this->last_name, this->password);
-        newCustomer.Register();
-    }
-
-    bool CUSTOMER::login(string first_name, string last_name, string password){
-            AUTH authToken(first_name, last_name, password);
-            bool isloggedin = authToken.Login();
-
-            if (!isloggedin){
-                cout << "credentials incorrect you have "<< authToken.trial_limit - authToken.number_of_trials << "left";
-                return false;
-            }
-           
-        //    char key;
-        //    cout << " Do you enter you password agian?\n";
-        //    cout << " type y for yes and any other key for no\n";
-        // //    add a cout << ">> " here 
-        //    cin >> key;
-        //    if (key == 'y' || key == 'Y'){
-
-        //    }
-           
-        
-            return true;
-    }
-
-    void CUSTOMER::logout(){
-        string details = this->first_name + this->last_name + this->password;
-        AUTH authToken(this->first_name, this->last_name, this->password);
-        authToken.Logout("auth.txt",details);
-    }
+// Function to handle customer logout and remove authentication details
+void CUSTOMER::logout()
+{
+    string details = this->first_name + this->last_name + this->password;
+    AUTH authToken(this->first_name, this->last_name, this->password);
+    authToken.Logout("auth.txt", details);
+}
