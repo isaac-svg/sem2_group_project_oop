@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
                 UI *ui = UI::getUIInstace();
                 cout << setw(20) << right << Color::BOLD << Color::FG_GREEN;
-                ui->delayPrint("You have informed the cashier that you have restocked the shop.\n ");
+                ui->delayPrint("I have notified the cashier that you have restocked the shop.\n ");
             }
             else
             {

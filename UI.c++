@@ -30,6 +30,7 @@ void UI::loadProducts()
 {
     
         std::ifstream inputFile("data.txt");
+        UI * ui =  UI::getUIInstace();
 
     if (!inputFile) {
         std::cerr << "Error opening file." << std::endl;
@@ -120,26 +121,27 @@ void UI::loadProducts()
        }
        catch(invalid_argument& e){
         
+        ui->delayPrint("Invalid Input !!!!\n");
          cerr << "Invalid input\n" ;
-        UI * ui =  UI::getUIInstace();
         ui->loadProducts();
        
        }
        catch(const std::out_of_range& e){
-        cerr <<  "Please we dont have a product with that id please check you input \n" ;
+        ui->delayPrint("Please we dont have a product with that id please check you input \n");
+        cerr << "check the product ids\n" ;
 
-        UI * ui =  UI::getUIInstace();
         ui->loadProducts();
         
        }
        catch(const std::exception& e)
        {
         std::cerr << e.what() << '\n';
-        UI * ui =  UI::getUIInstace();
         ui->loadAuthPage();
        }
        catch(...){
-        cerr << "Unknown error please contact the administrator";
+
+        ui->delayPrint("Unknown error please contact the administrator!!!!!\n");
+        cerr << "Unknown error please contact the administrator\n";
        }
        
 }
@@ -147,16 +149,16 @@ void UI::loadProducts()
 void UI::loadAuthPage()
 {       
     
-
+            UI *ui =  UI::getUIInstace();
     
         cout << "\v\v\v"<<endl;
         // cout << Color::BG_BLUE << Color::FG_RED;
         cout <<  right << setw(40)<< Color::FG_RED << Color::BOLD  ; this->delayPrint("Welcome to Amazona\n\n");
-        cout << right << setw(25) << Color::FG_RED<< Color::BOLD; this->delayPrint("Press 1  register an account with us\n\n");
+        cout << right << setw(25) << Color::FG_RED<< Color::BOLD; this->delayPrint("Press 1 to register an account with us\n\n");
         cout << right << setw(25) <<  Color::FG_RED << Color::BOLD <<"Already have an account?  Press 2 to login\n\n"<< Color::FG_DEFAULT << Color::NORMAL <<Color::BG_DEFAULT;
         cout<<endl;
-    // UI * uiState = UI::getUIInstace();
-    // uiState->loadProducts();
+    
+
     string choice;
     cout << Color::FG_GREEN << ">> ";
     cin >> choice;
@@ -182,7 +184,6 @@ void UI::loadAuthPage()
 
                 AUTH authToken(firstname, lastname, password);
                 authToken.Register();
-                UI *ui =  UI::getUIInstace();
                 ui->loadProducts();
         
     }
@@ -227,14 +228,14 @@ void UI::loadAuthPage()
         
         if (isLoggedIn)
         {
-            UI *ui =  UI::getUIInstace();
             ui->loadProducts();
         }
         if (!isLoggedIn)
         {
             
         string firstname,lastname,password;
-        cout << "Please register with us\n";
+        ui->delayPrint("It seems you are finding problems logging in\n") ;
+       ui->delayPrint("Please sign up again\n");
 
         cout << "Enter your first name";
         cin >> firstname;
@@ -245,7 +246,7 @@ void UI::loadAuthPage()
         cin >> password;
         cout<< "\n";
 
-        UI *ui =  UI::getUIInstace();
+        
         // display products
         ui->loadProducts();
 

@@ -38,11 +38,15 @@ Amazona is a command-line-based shopping application that allows customers to br
    - The `UI` class provides a smooth and interactive user interface.
    - It delays printing messages to create a more user-friendly experience.
    ```c++
-     for (char c : message) {
+     void UI::delayPrint(string message)
+         {
+        for (char c : message) 
+        {
         cout << c;
         fflush(stdout);
         this_thread::sleep_for(chrono::milliseconds(60)); // 60-millisecond delay
-    }
+            }
+         }
 
    ```
    - Customers and managers interact with the application through the command-line interface.
@@ -62,9 +66,9 @@ Overall, the "Amazona" application is a simple yet effective shopping system tha
 4. Follow the prompts to register or log in as a customer or manager.
 5. Use the provided options to browse products, add items to the cart, and complete the purchase.
 6. Managers can also choose to restock the products in the shop.
-
+amazona_manager
 ## Manger Login
-./amazona_manager <firstname> <lastname> <password>
+./app <firstname> <lastname> <password>
 Replace `<firstname>`, `<lastname>`, and `<password>` with the manager's actual first name, last name, and password, respectively.
 
 If the provided credentials match those of an existing manager, the manager will gain access to the dashboard and can perform actions like restocking the shop. If the login fails, the manager will receive appropriate feedback and can try again.
