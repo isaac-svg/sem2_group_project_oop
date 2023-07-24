@@ -1,34 +1,10 @@
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 12
-iphone, 12.00, hello world, 1212,12,12,12
-1,1,1,1
-1,1,1,1
-keyHolder,12.99,hello,12
+LED Bulb,5.99,bright LED bulb for energy-efficient,100
+Smartphone,399.99,feature-rich smartphone,50
+Electric,29.95,quick-boiling electric kettle,75
+Router,49.99,high-speed Wi-Fi router ,30
+Smart TV,699.00,smart TV with 4K resolution,20
+Bluetooth,39.99,portable Bluetooth speaker ,60
+Laptop,899.00,powerful laptop ,25
+Tablet,299.00,lightweight tablet ,40
+Purifier,149.95,An air purifier with HEPA filter,35
+Fan,24.99,compact electric fan ,80

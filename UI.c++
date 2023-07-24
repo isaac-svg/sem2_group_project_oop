@@ -253,6 +253,10 @@ void UI::loadAuthPage()
         }
 
     }
+    else{
+        ui->delayPrint("Sorry You entered a wrong choice!!!\n");
+        ui->loadAuthPage();
+    }
 }
 
 void UI::printReceipt(int sum,  set<string> unq, int id)
