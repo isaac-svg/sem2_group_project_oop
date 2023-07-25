@@ -8,3 +8,5 @@ Laptop,899.00,powerful laptop ,25
 Tablet,299.00,lightweight tablet ,40
 Purifier,149.95,An air purifier with HEPA filter,35
 Fan,24.99,compact electric fan ,80
+ipad,88,smart,1000
+nokia,45,nokia,190

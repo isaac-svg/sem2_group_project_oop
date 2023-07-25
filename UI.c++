@@ -9,7 +9,11 @@
 #include <thread>
 #include <chrono>
 #include "CASHIER.hpp"
-// #inc<lude<c++/11/algorithm>
+
+#ifdef _WIN32
+#include <window.h>
+#endif
+
 using namespace std;
 UI* UI::instance = NULL;
 
@@ -367,8 +371,17 @@ void UI::showCart()
 }
 
 
-
-
+#ifdef _WIN32
+ void UI::delayPrint(string message)
+ {
+        for (char c : message) {
+        cout << c;
+        fflush(stdout);
+        Sleep(60);
+        // this_thread::sleep_for(chrono::milliseconds(60)); // 60-millisecond delay
+    }
+ }
+ #elif __linux__
  void UI::delayPrint(string message)
  {
         for (char c : message) {
@@ -377,3 +390,4 @@ void UI::showCart()
         this_thread::sleep_for(chrono::milliseconds(60)); // 60-millisecond delay
     }
  }
+ #endif
