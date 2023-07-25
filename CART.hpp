@@ -61,7 +61,7 @@ public:
  * @brief Get the vector of products in the cart.
  * @return A vector containing the products in the cart.
  */
-    inline vector<PRODUCT> getItems(){
+    vector<PRODUCT> getItems(){
         return this->items;
     }
 

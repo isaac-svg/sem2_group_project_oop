@@ -17,6 +17,8 @@ void PRODUCT::addToProducts(string name, string description, float price, int qu
     products.push_back(newProduct);
 }
 
+vector<PRODUCT> PRODUCT::products = {};
+
 // Destructor
 PRODUCT::~PRODUCT()
 {

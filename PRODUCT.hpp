@@ -49,7 +49,7 @@ public:
  /**
  * @brief Static vector to store all products created at runtime.
  */
-static inline vector<PRODUCT> products;
+static  vector<PRODUCT> products;
 
 /**
  * @brief Function to add a new product to the products vectora t run time.
